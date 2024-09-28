@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join-Edit-Contact</title>
+    <link rel="stylesheet" href="./styles/newContact.css" />
+  </head>
+  <body>
+    <div id="edit-contact-overlay" class="d-none new-contact-overlay">
+      <div id="edit-popup" class="popup">
+        <div class="popup-content">
+          <div class="left-side-new-c">
+            <span class="closePopupMobile" onclick="closeEditedContact()">
+              <img class="close" src="./assets/icons/close-white.svg" alt="">
+            </span>
+            <div class="left-pane">
+              <img src="./assets/img/Capa 2.png" alt="" />
+              <h2>Edit contact</h2>
+              <p>Tasks are better with a team!</p>
+              <div class="blue-box"></div>
+            </div>
+          </div>
+          <div class="right-pane">
+            <span id="edit-closePopup" class="closePopup" onclick="closeEditedContact()"><img src="./assets/icons/close.svg" alt=""></span>
+            <div class="align-new-contact-input">
+              <div class="profil-icon align-avatar">
+                <div id="edit-avatar" class="profile-avatar avatar-in-edit" style=`background-color: ${assignRandomColors()}`></div>
+              </div>
+              <form class="align-form" id="contactForm">
+                
+                <input
+                  id="edit-name"
+                  class="icon-name"
+                  type="text"
+                  placeholder="Name"
+                  required
+                />
+                <input id="edit-email" class="icon-email" type="email" placeholder="Email" required />
+                <!-- Using the input Event to Filter Non-Numeric Input -->
+                <input id="edit-phone" class="icon-phone" type="tel" placeholder="Phone" required oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+
+                <div class="align-form-buttons">
+                  <button class="cancel-button" type="button" id="edit-cancelPopup" onclick="closeEditedContact()">
+                    Delete
+                    <img src="./assets/icons/close.svg" alt="Cancel Icon" />
+                  </button>
+                  <button id="save-edit-button" class="submit-button" type="button" value="submit" onclick="checkForm()">
+                    Save
+                    <img src="./assets/icons/check.svg" alt="Create Icon" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/newContact.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

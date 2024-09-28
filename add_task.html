@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join-AddTask</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="./styles/contactsPage.css" /> 
+     <link rel="stylesheet" href="./styles/template.css" /> 
+    <link rel="stylesheet" href="./styles/add_task.css" />
+    <link rel="stylesheet" href="./styles/editTask.css">
+</head>
+<body onload="onloadfunc(),includeHTML()">
+    <div id="head-side-foot" w3-include-html="./head-side-foot.html"></div>
+
+   
+    <!--------------------------------------------------------- Main content -->
+
+    <div class="container-main">
+        <!-- <div class="title">Add Task</div> -->
+
+        <div id="left-right-container" class="left-right-container">
+            <div id="left-side" class="left-side">
+                    <div id="titleHeaderAdust" class="title">Add Task</div>    
+                    <label  for="title">Titel<span class="required">*</span></label>
+                    <input class="input-style" type="text" id="title" name="entertitle" placeholder="Enter a title" >
+                    <div class="error-validation-title toggle-display">This field is required</div>
+
+                    <label for="textarea">Description</label>
+                    <textarea id="description" name="textarea" rows="4" cols="50" placeholder="Enter a Description..."></textarea>
+                  
+                    <label for="dropdown">Assigned to</label>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown()" class="dropdown-btn">Select contacts to assign <span><img src="./assets/icons/arrow_drop_down .svg" alt=""></span></button>
+                        <div id="contactsDropdown" class="dropdown-content">
+                            <!-- Load in JS -->
+                        </div>
+                    </div>
+                    <div id="selectedBadges" class="selected-badges"></div>
+                </div>  
+            
+                <div id="divider" class="divider"></div>
+
+                <div id="right-side" class="right-side">
+                    
+                    <label  for="date">Due date<span class="required">*</span></label>
+                    <input class="input-style" type="date" id="date" name="due-date" class="date-style">
+                    <div class="error-validation-date toggle-display">This field is required</div>
+                    
+                    <label>Prio</label>
+                    <div class="priority-buttons">
+                        <button type="button" id="urgent" class="priority-btn " onclick="selectPrio('urgent')">
+                            Urgent
+                            <img src="./assets/icons/PrioUrgent.svg" alt="Urgent Icon" >
+                        </button>
+                        <button type="button" id="medium" class="priority-btn medium-prio-active" onclick="selectPrio('medium')">
+                            Medium
+                            <img src="./assets/icons/PrioMedium.svg" alt="Medium Icon" class="change-svg-color">
+                        </button>
+                        <button type="button" id="low" class="priority-btn " onclick="selectPrio('low')">
+                            Low
+                            <img src="./assets/icons/PrioLow.svg" alt="Low Icon" >
+                        </button>
+                    </div>
+
+                    <label for="category">Category<span class="required">*</span></label>
+                    <div class="dropdown-category">
+                        <select id="category" name="dropdown" class="dropdownCategory">
+                            <option value="" disabled selected>Select task category</option>
+                            <option value="TechnicalTask">Technical Task</option>
+                            <option value="UserStory">User Story</option>                        
+                        </select>
+                       
+                       <img src="./assets/icons/arrow_drop_down .svg" alt="Dropdown Icon" class="custom-dropdown-icon">
+                       <div class="error-validation-category toggle-display">This field is required</div>
+                    </div>
+
+                   
+                    <form class="subtask-form" action="">
+                        <input class="input-style" type="text" name="" id="sub-task-input" placeholder="Add new subtask" oninput="subTaskInput()">  <!-- oninput whenever the input value changes. -->
+                        <button  type="button" class="subtask-btn">
+                            <span class="subtask-btn-plus"><img src="./assets/icons/addblack.svg" alt=""></span>
+                           
+                            <span class="subtask-btn-checked"><img src="./assets/icons/CheckAddTask.svg" alt="" class="toggle-display" onclick="addSubTask()"></span>
+                            <div class="subtask-btn-divider toggle-display"></div>
+                            <span class="subtask-btn-cancel"><img src="./assets/icons/CloseAddTask.svg" alt="" class="toggle-display" onclick="clearInput()"></span>
+                        </button>
+                    </form>
+
+                    <div class="subtask-list-container" id="subtask-list-container">
+                        <ul class="toggle-display">
+                           <!-- load in js -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="footer-add-task" class="footer-add-task">
+                <div id="footer-add-task-left" class="footer-add-task-left">
+                    <span><span class="required">*</span>This field is required</span>
+                </div>
+                <div id="footer-add-task-right" class="footer-add-task-right">
+                    <button class="clear-btn" onclick="clearAddTaskForm()">clear <img src="./assets/icons/close.svg" alt="Clear Icon" class="icon"></button>
+                    <button class="create-task-btn" onclick="addTask()">create Task <img src="./assets/icons/check.svg" alt="Create Icon" class="icon"></button>
+                    <input type="hidden" id="status" value="todo">
+                    <input type="hidden" id="priority" value="low">                    
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!------------------------------------------------------------popup Add Task successfully  -->
+    <div id="success-popup" class="popup-successfully">
+        <div class="popup-successfully-content">
+            <p>Task added successfully!</p>
+        </div>
+    </div>    
+    <script src="./js/global.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/addTask.js"></script> 
+    <script src="./js/addTask2.js"></script> 
+ 
+    <script>
+        function loadContent(page) {
+            document.getElementById('content-frame').src = page;
+        }
+    </script>
+
+<script>
+    function checkIfPopup() {
+        // Check if the page is opened as a popup
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('popup') === 'true') {
+            document.getElementById('head-side-foot').style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,671 @@
+body {
+  overflow: auto;
+  background-color: #f5f5f5;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.all {
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.key {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(42, 54, 71, 1);
+}
+.divider{
+  width:90px;
+  height: 3px;
+  background-color:#29ABE2;
+  border-radius: 50px;
+  display: none;
+}
+.summary-tasks {
+  padding-left: 96px;
+  margin-bottom: 40px;
+}
+.container {
+  padding-left: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.summary-todo-and-tasks {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-urgent-tasks {
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 168px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.summary-urgent-tasks:hover {
+  background-color: rgba(42, 54, 71, 1);
+  color: white;
+}
+
+.summary-all-tasks {
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+.done {
+  margin: 5px;
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 168px;
+  width: 264px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.done:hover {
+  background-color: rgba(42, 54, 71, 1);
+  color: white;
+}
+
+.done:hover p {
+  color: white;
+}
+
+.todo {
+  margin: 5px;
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 168px;
+  width: 264px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.todo:hover {
+  background-color: rgba(42, 54, 71, 1);
+  color: white;
+}
+.todo:hover p {
+  color: white;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 168px;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.task-container:hover {
+  background-color: #2a3647;
+  color: white;
+}
+
+.task-container h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 64px;
+}
+#upcoming-deadline {
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.task-container p {
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  font-size: 21px;
+}
+
+.deadline {
+  display: flex;
+}
+
+.deadline h3 {
+  font-size: 64px;
+}
+
+.deadline p {
+  flex-direction: column;
+}
+
+.amount-and-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount-and-todo h3 {
+  font-weight: 600;
+  font-size: 64px;
+  margin: 0;
+}
+
+.amount-and-todo h3:hover {
+  color: white;
+  font-weight: 600;
+  font-size: 64px;
+  margin: 0;
+}
+
+.amount-and-todo p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  color: #2a3647;
+}
+
+.greeting {
+  margin-top: 200px;
+  font-weight: 500;
+  margin-right: 0;
+  margin-left: 47px;
+  font-size: 30px;
+}
+
+.greeting-text {
+  color: black;
+  font-size: 47px;
+}
+
+.greeting-name {
+  color: #1e90ff;
+  font-size: 64px;
+}
+
+.icon-sm {
+  height: 69px;
+  width: 69px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.diso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diso h3 {
+  margin: 0;
+  font-size: 64px;
+}
+
+.date h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.main-headline {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-headline p {
+  font-size: 61px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1920px) {
+  .container,
+  .summary-tasks {
+    margin-left: 150px;
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+
+  .all {
+    justify-content: flex-start;
+  }
+
+  .summary-todo-and-tasks {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 1262px) {
+  .summary-tasks {
+    padding-left: 206px;    
+}
+.greeting-text {  
+  font-size: 30px;
+}
+}
+@media screen and (max-width: 12032px) {
+  .summary-tasks {
+    padding-left: 206px;    
+}
+.greeting-text {  
+  font-size: 20px;
+}
+
+}
+@media screen and (max-width: 1079px) {
+  .greeting {
+    display: none;
+  }
+  .summary-tasks {
+    padding-left: 1px;
+  }
+}
+
+@media screen and (max-width: 902px) {
+  .summary-tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+
+  .summary-todo-and-tasks {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .all {
+    padding: 0;
+    margin-top: 5px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    padding: 0;
+  }
+  .main-headline {   
+    flex-direction: column;
+    align-items: flex-start;    
+  }
+  p {
+    margin: 00px;
+    margin-left: 10px;
+  }
+  .key {
+    margin-left: 10px;  
+  }
+  .divider{    
+    display: block;
+    margin-left:10px;
+    margin-bottom: 40px;
+  }
+
+
+  @media screen and (max-width: 650px) {
+    .body {
+      height: auto;
+    }
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .all {
+      height: 90vh;
+    }
+
+    
+  }
+  
+
+    .main-headline img {
+      display: none;
+    }
+
+    .summary-tasks {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;     
+    }
+
+    .greeting {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .done {
+      height: 110px;
+      width: 250px;
+    }
+
+    .done p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .done h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+
+    .todo {
+      font-weight: 400;
+      height: 110px;
+      width: 250px;
+    }
+
+    .todo p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .todo h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+
+    .icon-sm {
+      height: 40px;
+      width: 40px;
+    }
+
+    .summary-urgent-tasks {
+      font-weight: 400;
+      height: 110px;
+      width: 515px;
+    }
+    .summary-urgent-tasks p {
+      font-size: 14px;
+    }
+
+    #upcoming-deadline {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .summary-urgent-tasks h3 {
+      margin: 0;
+      font-size: 47px;
+      font-weight: 600;
+    }
+
+    .task-container {
+      font-weight: 400;
+      height: 116px;
+      width: 150px;
+    }
+
+    .task-container p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .task-container h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .done {
+      height: 110px;
+      width: 186px;
+    }
+    .done p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .done h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+
+    .todo {
+      font-weight: 400;
+      height: 110px;
+      width: 186px;
+    }
+    .todo p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .todo h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+    .icon-sm {
+      height: 40px;
+      width: 40px;
+    }
+
+    .summary-urgent-tasks {
+      font-weight: 400;
+      height: 110px;
+      width: 396px;
+    }
+    .summary-urgent-tasks p {
+      font-size: 14px;
+    }
+
+    #upcoming-deadline {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .summary-urgent-tasks h3 {
+      margin: 0;
+      font-size: 47px;
+      font-weight: 600;
+    }
+
+    .task-container {
+      font-weight: 400;
+      height: 116px;
+      width: 116px;
+    }
+
+    .task-container p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .task-container h3 {
+      font-size: 47px;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .all {
+      width: 100%;
+      margin-top: 5px;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .done {
+      height: 108px;
+      width: 150px;
+    }
+
+    .done p {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .done h3 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .todo {
+      font-weight: 400;
+      height: 108px;
+      width: 150px;
+    }
+
+    .todo p {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .todo h3 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .icon-sm {
+      height: 38px;
+      width: 38px;
+    }
+
+    .summary-urgent-tasks {
+      margin-left: 4px;
+      font-weight: 400;
+      height: 108px;
+      width: 315px;
+    }
+
+    .summary-urgent-tasks p {
+      font-size: 12px;
+    }
+
+    #upcoming-deadline {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .summary-urgent-tasks h3 {
+      margin: 0;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .task-container {
+      font-weight: 400;
+      height: 114px;
+      width: 88px;
+    }
+
+    .task-container p {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .task-container h3 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .summary-all-tasks {
+      margin-top: 10px;
+      gap: 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+
+   
+    .main-headline {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+    .main-headline p {
+      font-size: 51px;     
+  }
+  }
+
+@media screen and (max-width: 350px) {
+  .main-headline p {
+    font-size: 51px;    
+}
+.done { 
+  width: 130px;
+}
+.todo { 
+  width: 130px;
+}
+.icon-sm {
+  height: 30px;
+  width: 30px;
+}
+.done h3 {
+  font-size: 35px;
+  font-weight: 600;
+}
+.todo h3 {
+  font-size: 35px;
+  font-weight: 600;
+}
+.key {
+  font-size: 16px;
+}
+.summary-urgent-tasks {
+  margin-left: 4px;
+  font-weight: 400;
+  height: 108px;
+  width: 295px;
+}
+.task-container { 
+  width: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.task-container h3 {
+  font-size: 35px;
+  font-weight: 600;
+}
+}

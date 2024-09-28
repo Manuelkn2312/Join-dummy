@@ -1,0 +1,116 @@
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    z-index: 1000;
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+/**************************************************************** mobile */
+
+.menu-mobile-display-container {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #2A3647;
+    width: 100%;
+    height: 80px;      
+    position: fixed;
+    bottom: 0px;    
+    z-index: 1080;
+    color: #f8f9fa;
+    display: none;
+}
+.menu-mobile-display-item {
+   
+    flex: 1;
+    margin-top: 16px;
+}
+.menu-mobile-display-item a {
+    flex-direction: column;
+    text-decoration: none;
+    color: #f8f9fa;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.menu-mobile-display-item a img {
+   
+    margin-bottom: 4px;
+    width: 30px;
+    height: 30px;
+}
+.menu-mobile-display-item a span {
+    display: block;
+    margin-top: 2px;
+}
+
+@media (max-width: 1030px) {
+    .menu-item span{
+        display: none;    
+    }
+    .contact-name-large {
+        font-size: 18px;    
+    }
+    .sidebar {    
+        width: 120px;    
+    }
+    .menu-item {   
+        width: calc(100% -40px);    
+        padding-left: 40px;
+    }
+    .footer-container {     
+        padding-left: 10px;
+    }
+    .footer-container a:hover{    
+        font-size: 16px;
+        color:#29ABE2;    
+    }
+    .logo-container {
+        width: 50px;
+        height: 100px;    
+        margin-left: 20px;
+    }
+    .logo-container img{
+        width: 80px;
+        height:100px;
+  }
+}
+  @media (max-width: 902px) {
+    .sidebar {    
+        display: none;   
+    }
+    .container-main {    
+        padding-left: 0px;    
+    }
+    .menu-mobile-display-container {   
+        display: flex;
+    }
+    .logo-small {
+        display: block;
+    }
+    .header-left-content {
+        justify-content: start;
+        padding-left: 40px;
+    }
+}
+/* *****************************************iphone SE */
+@media (max-width: 375px) {
+    .menu-mobile-display-item a img{
+        width: 20px;
+        height: 20px;
+    }
+    .menu-mobile-display-item a {
+        font-size: 10px;
+    }
+    .menu-mobile-display-container {
+        height: 60px; 
+    }
+    .menu-mobile-display-item{        
+        margin-top: 10px;        
+    }
+
+}
+  

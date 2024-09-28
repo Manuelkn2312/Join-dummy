@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join-Contacts</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="./styles/contactsPage.css" /> 
+     <link rel="stylesheet" href="./styles/template.css" /> 
+    <link rel="stylesheet" href="./styles/newContactMobile.css">
+</head>
+<body onload="init(), includeHTML()">
+  <div w3-include-html="./newContact.html"></div>
+  <div w3-include-html="./editContact.html"></div>
+  <div w3-include-html="./head-side-foot.html"></div>
+
+    <main class="container-main">
+
+      <section class="contact-details-area" id="contact-detail">
+          <div class="list-container">
+            <div class="button-container">
+              <button id="openOverlayNC" class="primary-btn new-contact-button text-action-btn" onclick="openNewContact()">
+                Add new contact <img src="./assets/icons/person_add.svg" alt="">
+              </button>
+            </div>
+            <ul class="contact-list" id="contact-list">
+              <!-- Load contact list from JS -->
+            </ul>
+          </div>
+          <div id="mobile-add-button" class="mobile-add-button">
+            <img id="mobile-add1" class="mobile-default-img" src="./assets/icons/nContactM1.svg" alt="">
+            <img id="mobile-add2" class="mobile-hover-img" src="./assets/icons/nContactM2.svg" alt="" onclick="openNewContact()">
+          </div>
+      </section>
+
+      <section id="contact-display" class="contact-display">
+          <div class="contact-heading">
+            <div class="row">
+              <span class="contacts-title">Contacts</span>
+              <span id="btnBack" onclick="backToContactList()" class="arrow-left-contacts d-none"><img src="./assets/img/arrow-left-line.png" alt=""></span>
+            </div>
+            <div class="divider"></div>
+            <span>Better with a team</span>
+            <div class="divider-responsive"></div>
+          </div>
+          <article id="contact-content" class="contact-content"> 
+              <!--Load in JS-->
+          </article>
+          <div id="mobile-contact-option" class="mobile-contact-option" onclick="openMobileContactOption()"><img src="./assets/icons/more_vert.svg" alt="" /></div>
+          <div id="overlay-option" class="overlay-option d-none" onclick="closeMobileContactOption()"></div>
+          <div class="mobile-contact-option-popup d-none" id="mobile-contact-option-popup">
+            <div class="mobile-contact-option-edit"><button id="mobile-button-edit" class="mobile-edit-delete-contact-button"><img src="./assets/img/edit.svg" alt="Edit">Edit</button></div>
+                  <div class="mobile-contact-option-delete"><button id="mobile-button-delete" class="mobile-edit-delete-contact-button"><img src="./assets/img/delete.svg" alt="Delete">Delete</button></div>
+          </div>
+      </section>
+      
+  </main>
+  
+      <script src="./js/global.js"></script>
+      <script src="./js/script.js"></script>
+      <script src="./js/firebase.js"></script>
+      <script src="./js/contactPage.js"></script>
+      <script src="./js/tampletes.js"></script>
+      <script src="./js/newContact.js"></script>
+      <script src="./js/editContact.js"></script>
+      <script>
+        window.addEventListener("load", (event) => {
+          initialProfileIcon()
+        });
+      </script>
+</body>
+</html>

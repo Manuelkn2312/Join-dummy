@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join-Board</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="./styles/contactsPage.css" /> 
+    <link rel="stylesheet" href="./styles/template.css" />
+    <link rel="stylesheet" href="./styles/board.css" />
+    <link rel="stylesheet" href="./styles/add_task.css" />
+    <link rel="stylesheet" href="./styles/add_task_popup.css" />
+    <link rel="stylesheet" href="./styles/editTask.css" />
+ 
+</head>
+<body onload="initBoard(), includeHTML()">
+  <div w3-include-html="./head-side-foot.html"></div>
+
+    <div id="main-board" class="main-board">
+      <div id="head-board" class="head-board">
+        <div class="align-board-headline"><h2>Board</h2><button class="addButton-mobileBoard" onclick="openPopupAddTask()"><img src="./assets/icons/add.svg" alt=""></button></div>
+        
+        <div class="search-container">
+          <div class="input-div">
+            <input
+            type="text"
+            id="search-input"
+            placeholder="Find Task"
+            onkeydown="searchTasks()"
+            class="search-input" />
+            <img class="search-input-img" src="./assets/icons/Property 1=search.svg" alt="">
+          </div>
+          <button class="search-button" onclick="openPopupAddTask()">
+            Add task
+            <img src="./assets/icons/add.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <!------------------------------------------------------------ Start popup Add Task successfully  -->
+      <div id="success-popup" class="popup-successfully">
+        <div class="popup-successfully-content">
+            <p>Task added successfully!</p>
+        </div>
+      </div>
+      <!------------------------------------------------------------End popup Add Task successfully  -->
+
+      <div id="taskDetailOverlay" class="task-detail-overlay">
+        <div class="overlay-content">
+          <!-- <span id="closeDetailOverlay" class="close-button">&times;</span> -->
+          <div id="taskDetailContent">
+            <!-- Task details will be populated here -->
+          </div>
+        </div>
+      </div>
+
+      <div id="board-main-div" class="board-main-div">
+        <div id="to-do-div" class="to-do-div align-all-4">
+          <div id="to-do-head" class="all4-style">
+            <span>To do</span>
+            <img
+              class="hover-to-blue"
+              src="./assets/icons/add-button-board.svg"
+              alt="" onclick="openPopupAddTask()"/>
+          </div>
+          <div
+            id="todoBoard"
+            class="task-section drag-area"
+            ondrop="moveTo('todo')"
+            ondragleave="removeHighlight('todoBoard')"
+            ondragover="allowDrop(event); highlight('todoBoard')"></div>
+        </div>
+
+        <div id="in-progress-div" class="in-progress-div align-all-4">
+          <div id="in-progress-head" class="in-progress-head all4-style">
+            <span>In progress</span>
+            <img
+              class="hover-to-blue"
+              src="./assets/icons/add-button-board.svg"
+              alt="" onclick="openPopupAddTask()"/>
+          </div>
+          <div
+            id="inProgressBoard"
+            class="task-section drag-area"
+            ondrop="moveTo('inProgress')"
+            ondragleave="removeHighlight('inProgressBoard')"
+            ondragover="allowDrop(event); highlight('inProgressBoard')"></div>
+        </div>
+
+        <div id="await-feedback-div" class="await-feedback-div align-all-4">
+          <div id="await-feedback-head" class="all4-style">
+            <span>Await feedback</span>
+            <img
+              class="hover-to-blue"
+              src="./assets/icons/add-button-board.svg"
+              alt="" onclick="openPopupAddTask()"/>
+          </div>
+          <div
+            id="awaitFeedbackBoard"
+            class="task-section drag-area"
+            ondrop="moveTo('awaitFeedback')"
+            ondragleave="removeHighlight('awaitFeedbackBoard')"
+            ondragover="allowDrop(event); highlight('awaitFeedbackBoard')"></div>
+        </div>
+
+        <div id="done-div" class="done-div align-all-4">
+          <div id="done-head" class="all4-style">
+            <span>Done</span>
+          </div>
+          <div
+            id="doneBoard"
+            class="task-section drag-area"
+            ondrop="moveTo('done')"
+            ondragleave="removeHighlight('doneBoard')"
+            ondragover="allowDrop(event); highlight('doneBoard')"></div>
+        </div>
+      </div>
+    </div>
+<!-- ---------------------------------------------------------------------------------------Start Add Task popup -->
+
+<div id="addTaskModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closePopupAddTask()">&times;</span>
+      <div id="addTaskContent"></div>
+  </div>
+</div>
+
+<!--------------------------------------------- Overlay -->
+<div id="modalOverlay" class="overlay" onclick="closePopupAddTask()"></div>
+
+<!-- --------------------------------------------------------------------------------------- End Add Task popup -->
+
+
+    <script src="./js/global.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/board.js"></script>
+    <script src="./js/board2.js"></script>
+    <script src="./js/addTask.js"></script>
+    <script src="./js/addTask2.js"></script> 
+    <script src="./js/editTask.js"></script>
+  </body>
+</html>

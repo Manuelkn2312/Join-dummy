@@ -1,0 +1,342 @@
+.new-contact-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    z-index: 1100;
+}
+.new-contact-overlay.aktiv{
+    transform: translate(0);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.popup {
+    width: 80%;
+    max-width: 1200px;
+    height: 60%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    z-index: 1001;
+    overflow: hidden;
+}
+.popup-content {
+    display: flex;
+    height: 100%;
+}
+.left-side-new-c{
+    width: 40%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    position: relative
+}
+.avatar-in-edit{
+    margin-right: 0;
+    width: 134px;
+    height: 134px;
+}
+.left-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 150px;
+    padding-left: 5%;
+}
+.left-pane img{
+    width: 55.6px;
+    height: 66.48px;
+}
+.left-pane h2{
+    font-size: 4rem;
+    color: white;
+    margin: 0;
+    margin-top: 12px;
+}
+.left-pane p{
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+.left-pane .blue-box{
+    height: 3px;
+    background-color: #29ABE2;
+    width: 20%;
+}
+.right-pane {
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.align-new-contact-input{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.align-form{
+    width: 60%;
+}
+.profil-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.closePopup {
+    filter: invert(0); 
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
+.closePopupMobile {
+    display: none;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 12px;
+}
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-position: calc(100% - 12px) center; 
+    background-repeat: no-repeat;
+    background-size: 20px; 
+    border-radius: 8px;
+}
+.icon-name {
+    background-image: url("../assets/icons/person.svg");
+}
+.icon-email {
+    background-image: url("../assets/icons/mail.svg"); 
+}
+.icon-phone {
+    background-image: url("../assets/icons/call.svg"); 
+}
+.align-form-buttons button{
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    height: 52px;
+}
+.cancel-button {
+    background-color: white;
+    padding: 0 14px;
+    margin-right: 20px;
+}
+.cancel-button img {
+    padding-left: 4px;
+    height: 18px;
+    width: 18px;
+}
+.cancel-button:hover{
+    color: #29ABE2;
+    border: 2px solid #29ABE2;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.cancel-button:hover img{
+    filter: brightness(0) saturate(100%) invert(55%) sepia(96%) saturate(3326%) hue-rotate(169deg) brightness(96%) contrast(98%);
+}
+.submit-button{
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+}
+.submit-button:hover{
+    border: none;
+    background-color: #29ABE2;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.submit-button img{
+    margin-left: 8px;
+}
+.d-none {
+    display: none;
+}
+.newContactCreated{
+    position: fixed;
+    height: 70px;
+    width: 250px;
+    font-size: 16px;
+    bottom: 10%;
+    right: 40%;
+    background-color: #2A3647;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 4000;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(1000px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+.slideInRight{
+    animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideLeft{
+  from {
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(1000px);
+  }
+}
+.slideLeft{
+  animation: slideLeft 1s ease-in-out;
+}
+@media (max-width: 1360px) {
+  .left-side-new-c{
+    padding: 0;
+  }
+  .left-pane h2{
+    font-size: 3.7rem;
+  }
+  .left-pane p{
+    font-size: 1.5rem;
+  }
+  .popup{
+    width: 90%;
+  }
+  .right-pane{
+    position: relative;
+  }
+}
+
+@media (max-width: 992px){
+  .left-side-new-c{
+    width: 45%;
+  }
+  .align-form-buttons{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .cancel-button{
+    width: 100%;
+  }
+  .left-pane h2{
+    font-size: 3.4rem;
+  }
+  .left-pane p{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 860px){
+  .popup{
+    height: 80%;
+  }
+  .popup-content{
+    flex-direction: column;
+  }
+  .left-side-new-c{
+    width: 100%;
+    height: 40%;
+  }
+  .left-pane{
+    margin-top: 32px;
+  }
+  .right-pane{
+    width: 100%;
+    margin-top: 24px;
+  }
+  .closePopup {
+    top: 0;
+    right: 0;
+  }
+  .profil-icon{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: -30%
+  }  
+  .align-form-buttons{
+    max-width: 280px;
+  }
+  .align-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+  .align-form input{
+    width: 100%;
+  }
+  .cancel-button{
+    display: none;
+  }
+  .left-pane img{
+    display: none;
+  }
+  .closePopup {
+    display: none;
+  }
+  .close{
+    opacity: 1;
+  }
+  .closePopupMobile {
+    display: block;
+  }
+}
+@media (max-width: 580px) {
+  .align-form{
+    width: 90%;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 430px){
+  .popup {
+    height: 80%;
+    margin-top: 20px;
+  }
+  .left-pane p {
+    font-size: 1.2rem;
+  }
+  .left-pane h2 {
+    font-size: 1.2rem;
+  }
+  .align-form {
+    padding: 10px;
+  }
+  .profil-icon img{
+    width: 100px;
+    height: 100px;
+    margin-top: 22%;
+  }
+  #edit-avatar{
+    width: 100px;
+    height: 100px;
+    margin-top: 22%;
+  }
+}
